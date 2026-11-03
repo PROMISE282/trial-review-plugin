@@ -1,0 +1,22 @@
+# 페르소나 출처 (사람이 확인할 때만 읽는다. 평가 중에는 읽지 않는다)
+
+한국어·영어 혼합, 1차 기관·공식 문서 위주.
+
+- PM: [개발자와 PM](https://brunch.co.kr/@ywkim36/23), [우아한형제들 PM](https://techblog.woowahan.com/13249/), [9 Prioritization Lessons](https://aatir.substack.com/p/9-prioritization-lessons-for-product)
+- UX: [NN/g 10 Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/), [NN/g 심각도](https://www.nngroup.com/videos/prioritize-ux-findings-severity/)
+- FE: [web.dev Core Web Vitals](https://web.dev/articles/vitals)
+- BE: [Val Town 사후 분석](https://www.val.town/x/valdottown/blog/branch/mcp/code/posts/2025-04-02-post-mortem-db-migration.md), [멱등성 도입](https://oneuptime.com/blog/post/2026-09-14-add-idempotency-existing-post-backward-compatible/markdown)
+- DBA: [MySQL 8.4 Online DDL](https://dev.mysql.com/doc/refman/8.4/en/innodb-online-ddl-operations.html), [동시성](https://dev.mysql.com/doc/refman/8.4/en/innodb-online-ddl-performance.html)
+- 보안: [OWASP Session Management](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html), [NIST 세션 관리](https://pages.nist.gov/800-63-4/sp800-63b/session/), [Okta 토큰 탈취](https://krebsonsecurity.com/2023/10/hackers-stole-access-tokens-from-oktas-support-unit/)
+- SRE: [Google SRE 긴급 대응](https://sre.google/sre-book/emergency-response/), [사후 분석 문화](https://sre.google/sre-book/postmortem-culture/), [우아~한 장애대응](https://techblog.woowahan.com/4886/)
+- QA: [Fowler 탐색적 테스트](https://martinfowler.com/bliki/ExploratoryTesting.html), [Spotify flakiness](https://engineering.atspotify.com/2019/11/test-flakiness-methods-for-identifying-and-dealing-with-flaky-tests), [Google flaky](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html)
+- A11y: [WCAG 2.2](https://www.w3.org/TR/WCAG22/), [A11Y Project 문제 UI](https://www.a11yproject.com/posts/a-guide-to-troublesome-ui-components/), [WebAIM 퀵 레퍼런스](https://webaim.org/resources/evalquickref/)
+- CS: [Help Scout 피드백 분석](https://www.helpscout.com/blog/customer-feedback-analysis/), [Intercom 태그](https://www.intercom.com/help/en/articles/6604447-keep-track-of-support-requests-and-bugs-by-tagging-conversations)
+- Data: [A/B 테스트 함정](https://medium.com/@suraj_bansal/pitfalls-and-mistakes-in-a-b-tests-4d9073e17762), [다중 지표 위험 인지 결정](https://arxiv.org/pdf/2402.11609)
+- 영업: [SE 로드맵 과속 약속](https://medium.com/@Mrramesh/sales-engineer-roadmap-and-over-promise-fc406886f995), [B2B 기능 요청](https://swkhan.medium.com/how-to-deal-with-b2b-sales-driven-feature-requests-5199ec308a38)
+- 재무: [FinOps Framework](https://www.finops.org/framework/), [단위 경제](https://www.finops.org/wg/introduction-cloud-unit-economics/)
+- 법무: [개인정보 포털](https://www.privacy.go.kr/front/contents/cntntsView.do?contsNo=121), [공정위 불공정약관](https://www.ftc.go.kr/www/contents.do?key=699), [공정위 표준약관](https://www.ftc.go.kr/www/selectBbsNttList.do?bordCd=201&key=202)
+- 운영: [Atlassian 변경 관리](https://www.atlassian.com/itsm/change-management), [AWS 변경 분류](https://docs.aws.amazon.com/whitepapers/latest/establishing-your-cloud-foundation-on-aws/change-management-categories-priorities.html)
+- 일반 사용자: [NN/g How People Read Online](https://www.nngroup.com/articles/how-people-read-online/), [NN/g First 2 Words](https://www.nngroup.com/articles/first-2-words-a-signal-for-scanning/)
+- 개발 공부하는 사람: [Stack Overflow 2026 학습 경로](https://survey.stackoverflow.co/2026/community/data/learn-code-how), [Compiler Error Messages Considered Unhelpful](https://dl.acm.org/doi/10.1145/3344429.3372508)
+- 실무 개발자: [Stack Overflow 2024 전문 개발자](https://survey.stackoverflow.co/2024/professional-developers), [2025 설문](https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/)

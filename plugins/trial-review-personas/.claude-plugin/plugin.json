@@ -1,6 +1,6 @@
 {
   "name": "trial-review-personas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "trial-review 시험판: 직무·대상 사용자 페르소나와 안건별 배심원 배치를 적용한 재판 형식 평가입니다. 기존 trial-review와 버전·배포를 따로 관리합니다.",
   "author": { "name": "PROMISE282" },
   "license": "MIT",
