@@ -1,6 +1,8 @@
 {
   "name": "promise282-tools",
-  "owner": { "name": "PROMISE282" },
+  "owner": {
+    "name": "PROMISE282"
+  },
   "metadata": {
     "description": "PM/컨펌매니저 재판 형식으로 수정사항을 평가하는 Claude 플러그인 모음"
   },
@@ -8,18 +10,31 @@
     {
       "name": "trial-review",
       "source": "./plugins/trial-review",
-      "description": "수정사항을 재판 형식으로 평가: 직무별 배심원 2회 평가(적용 전 텍스트 / 적용 후 관찰)와 찬성 비율 적용 순위",
-      "version": "1.1.0",
+      "description": "수정사항을 재판 형식으로 평가: 직무·대상 사용자 페르소나와 안건별 배심원 배치, 2회 평가, 찬성 비율 적용 순위",
+      "version": "2.0.0",
       "category": "productivity",
-      "keywords": ["review", "pm", "decision", "jury", "ui-ux"]
+      "keywords": [
+        "review",
+        "pm",
+        "decision",
+        "jury",
+        "persona",
+        "ui-ux"
+      ]
     },
     {
-      "name": "trial-review-personas",
-      "source": "./plugins/trial-review-personas",
-      "description": "trial-review 시험판: 직무·대상 사용자 페르소나와 안건별 배심원 배치(기존 trial-review와 별도 버전)",
-      "version": "0.1.6",
+      "name": "trial-review-classic",
+      "source": "./plugins/trial-review-classic",
+      "description": "[구판] 페르소나 없는 고정 배심원 편성의 재판 형식 평가(1.1.0). 'classic'이라고 말할 때만 사용",
+      "version": "1.1.0",
       "category": "productivity",
-      "keywords": ["review", "pm", "decision", "jury", "persona", "experimental"]
+      "keywords": [
+        "review",
+        "pm",
+        "decision",
+        "jury",
+        "legacy"
+      ]
     }
   ]
 }

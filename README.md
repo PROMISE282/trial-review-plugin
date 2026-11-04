@@ -40,25 +40,30 @@
 /plugin install trial-review@promise282-tools
 ```
 
-이미 설치했다면 `/plugin` 화면에서 마켓플레이스를 업데이트한 뒤 플러그인을 갱신합니다(1.1.0부터 새 규칙이 적용됩니다).
+이미 설치했다면 `/plugin` 화면에서 마켓플레이스를 업데이트한 뒤 플러그인을 갱신합니다(2.0.0부터 페르소나 배심원이 기본입니다).
 
 ### Claude Desktop
 
 Claude Code 탭의 플러그인 화면에서 마켓플레이스로 `PROMISE282/trial-review-plugin`을 추가한 뒤
 `trial-review`를 설치합니다.
 
-### ChatGPT / Codex 등 OpenAI 도구 (실험적)
+### ChatGPT 웹 / Codex 등 OpenAI 도구 (실험적)
 
-이 플러그인의 실체는 `SKILL.md`와 `references/` 파일이며, 스크립트나 훅은 없습니다. `.claude-plugin/` 매니페스트만 Claude 전용이라, `SKILL.md` 형식(Agent Skills)을 지원하는 도구에서는 스킬 폴더만 복사해 쓸 수 있습니다.
+실체는 `SKILL.md`와 `references/` 파일이고 스크립트·훅은 없어서, Agent Skills 형식을 지원하는 도구에서는 스킬 폴더만 올리면 됩니다. 커스텀 GPT는 2026-12-11 종료 예정이므로 쓰지 않습니다.
 
-- **Codex CLI:** `plugins/trial-review/skills/trial-review/` 폴더를 통째로 스킬 폴더(예: `~/.codex/skills/`)에 복사합니다. 경로는 Codex 버전에 따라 다를 수 있으니 해당 도구의 스킬 문서를 확인합니다.
-- **ChatGPT 웹(커스텀 GPT):** 스킬 폴더를 직접 읽지 못할 수 있습니다. 이 경우 `SKILL.md` 본문을 지침에 붙여 넣되, 지침 글자 수 제한(약 8,000자)을 넘으면 `SKILL.md`와 `references/*.md`를 지식 파일로 올리고 지침에는 "지식 파일의 `SKILL.md`를 따른다"고 적습니다.
-- Claude 전용 표현(스킬 호출 이름, 도구 이름)은 다른 도구에서 의미가 다를 수 있습니다. 이 방법은 아직 OpenAI 도구에서 시험하지 않았습니다.
+```bash
+scripts/package-skill.sh   # dist/trial-review.zip 생성
+```
+
+- **ChatGPT 웹:** chatgpt.com의 Plugins 화면에서 Skills를 만들 때 `dist/trial-review.zip`을 올립니다. 화면 이름과 업로드 가능 여부는 계정·시점에 따라 달라 아직 확인하지 못했습니다. 올라가지 않으면 아래 폴백을 씁니다.
+- **ChatGPT 폴백(프로젝트):** 프로젝트 파일로 `SKILL.md`와 `references/*.md`를 올리고, 프로젝트 지침에 "재판 요청이면 `SKILL.md`를 읽고 따른다"고 적습니다.
+- **Codex CLI:** `plugins/trial-review/skills/trial-review/` 폴더를 통째로 스킬 폴더(예: `~/.codex/skills/`)에 복사합니다. 경로는 버전에 따라 다를 수 있습니다.
+- 이 방법은 아직 OpenAI 도구에서 시험하지 않았습니다.
 
 ## 사용
 
 대화에서 "재판 형식으로 판단해줘", "배심원 투표로 우선순위 매겨줘", "찬성 비율로 순위"처럼 말하면 스킬이 자동으로 쓰입니다. 영어로는 "trial review", "jury vote"도 인식합니다.
-직접 부르려면 `/trial-review:trial-review`를 입력합니다.
+직접 부르려면 `/trial-review:trial-review`를 입력합니다. 페르소나 없는 구판은 "클래식 재판"이라고 하거나 `trial-review-classic` 플러그인을 설치해 `/trial-review-classic:trial-review-classic`으로 부릅니다.
 
 ## 한계
 
@@ -68,15 +73,16 @@ Claude Code 탭의 플러그인 화면에서 마켓플레이스로 `PROMISE282/t
 
 ## 변경 이력
 
+- **2.0.0:** 페르소나 판(구 trial-review-personas 0.1.6)이 `trial-review`가 되었습니다. 이전 판은 `trial-review-classic` 1.1.0으로 분리했습니다. ChatGPT용 zip 패키징 스크립트 추가.
 - **1.1.0:** 기권(−)과 인원별 표수 기준, 상태 결정 순서, 차단급 반대, 안건 수·유형별 자동 조정(요약 형식·시범 계획), 소급·읽기 전용 처리, "이미 반영" 판정과 자기 서술 증거 등급, 번호 지정 처리, 참조 파일(`references/`) 추가.
 - **1.0.0:** 최초 공개. 직무별 배심원 2회 평가와 찬성 비율 순위.
 
-## trial-review-personas (시험판)
+## 페르소나 배심원 (2.0.0부터 기본)
 
-`trial-review`에 **직무 페르소나**와 **안건별 배심원 배치**를 더한 시험판입니다. `trial-review`와 버전과 배포를 따로 관리하며, 이 브랜치(`personas`)에 있습니다. 사용자가 "trial-review-personas", "페르소나 재판", "페르소나 배심원"이라고 말할 때만 쓰이고, 일반 "재판해줘"에는 `trial-review`가 쓰입니다.
+2.0.0부터 `trial-review`는 **직무 페르소나**와 **안건별 배심원 배치**를 쓰는 판입니다. 이전 판(1.1.0, 고정 편성)은 `trial-review-classic`으로 남겼습니다.
 
 ```
-/plugin install trial-review-personas@promise282-tools
+/plugin install trial-review-classic@promise282-tools
 ```
 
 - 배심원 직무마다 판단 기준(`references/personas.md`)을 둡니다. 출처는 사람이 확인하는 용도로 `references/personas-sources.md`에 분리했고 평가 중에는 읽지 않습니다.
@@ -94,7 +100,8 @@ Claude Code 탭의 플러그인 화면에서 마켓플레이스로 `PROMISE282/t
 | 0.1.3 | 절약 모드 제거 | |
 | 0.1.4 | 참고 파일을 상황별로 분할해 읽기량 축소, 근거·판결 규칙 보강 | |
 | 0.1.5 | 근거를 쟁점 크기에 따라 2~4개로, 쟁점란 2문장 이내 | |
-| 0.1.6 | 코드 커밋 상태 단정 금지 규칙 | 현재 배포본 |
+| 0.1.6 | 코드 커밋 상태 단정 금지 규칙 | |
+| 2.0.0 | `trial-review`로 승격(0.1.6 내용), 구판은 `trial-review-classic` | 현재 배포본 |
 
 ### 시험 방법
 
