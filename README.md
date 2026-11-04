@@ -49,7 +49,7 @@ Claude Code 탭의 플러그인 화면에서 마켓플레이스로 `PROMISE282/t
 
 ### ChatGPT 웹 / Codex 등 OpenAI 도구 (실험적)
 
-실체는 `SKILL.md`와 `references/` 파일이고 스크립트·훅은 없어서, Agent Skills 형식을 지원하는 도구에서는 스킬 폴더만 올리면 됩니다. 커스텀 GPT는 2026-12-11 종료 예정이므로 쓰지 않습니다.
+실체는 `SKILL.md`와 `references/` 파일이고 실행 시 필요한 스크립트·훅은 없으며(ZIP을 만드는 패키징 스크립트만 있습니다), Agent Skills 형식을 지원하는 도구에서는 스킬 폴더만 올리면 됩니다. 커스텀 GPT는 2026-12-11 종료 예정이므로 쓰지 않습니다.
 
 ```bash
 scripts/package-skill.sh   # dist/trial-review.zip 생성
@@ -58,6 +58,7 @@ scripts/package-skill.sh   # dist/trial-review.zip 생성
 - **ChatGPT 웹:** chatgpt.com의 Plugins 화면에서 Skills를 만들 때 `dist/trial-review.zip`을 올립니다. 화면 이름과 업로드 가능 여부는 계정·시점에 따라 달라 아직 확인하지 못했습니다. 올라가지 않으면 아래 폴백을 씁니다.
 - **ChatGPT 폴백(프로젝트):** 프로젝트 파일로 `SKILL.md`와 `references/*.md`를 올리고, 프로젝트 지침에 "재판 요청이면 `SKILL.md`를 읽고 따른다"고 적습니다.
 - **Codex CLI:** `plugins/trial-review/skills/trial-review/` 폴더를 통째로 스킬 폴더(예: `~/.codex/skills/`)에 복사합니다. 경로는 버전에 따라 다를 수 있습니다.
+- ChatGPT에서 코드 변경·테스트 실행까지 하려면 그런 도구가 연결되어 있어야 합니다. 도구가 없으면 2차 평가는 "2차 미실시(읽기 전용: 도구 제한)"로 표시되고 권고만 나옵니다.
 - 이 방법은 아직 OpenAI 도구에서 시험하지 않았습니다.
 
 ## 사용
