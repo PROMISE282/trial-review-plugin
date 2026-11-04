@@ -47,6 +47,14 @@
 Claude Code 탭의 플러그인 화면에서 마켓플레이스로 `PROMISE282/trial-review-plugin`을 추가한 뒤
 `trial-review`를 설치합니다.
 
+### ChatGPT / Codex 등 OpenAI 도구 (실험적)
+
+이 플러그인의 실체는 `SKILL.md`와 `references/` 파일이며, 스크립트나 훅은 없습니다. `.claude-plugin/` 매니페스트만 Claude 전용이라, `SKILL.md` 형식(Agent Skills)을 지원하는 도구에서는 스킬 폴더만 복사해 쓸 수 있습니다.
+
+- **Codex CLI:** `plugins/trial-review/skills/trial-review/` 폴더를 통째로 스킬 폴더(예: `~/.codex/skills/`)에 복사합니다. 경로는 Codex 버전에 따라 다를 수 있으니 해당 도구의 스킬 문서를 확인합니다.
+- **ChatGPT 웹(커스텀 GPT):** 스킬 폴더를 직접 읽지 못할 수 있습니다. 이 경우 `SKILL.md` 본문을 지침에 붙여 넣되, 지침 글자 수 제한(약 8,000자)을 넘으면 `SKILL.md`와 `references/*.md`를 지식 파일로 올리고 지침에는 "지식 파일의 `SKILL.md`를 따른다"고 적습니다.
+- Claude 전용 표현(스킬 호출 이름, 도구 이름)은 다른 도구에서 의미가 다를 수 있습니다. 이 방법은 아직 OpenAI 도구에서 시험하지 않았습니다.
+
 ## 사용
 
 대화에서 "재판 형식으로 판단해줘", "배심원 투표로 우선순위 매겨줘", "찬성 비율로 순위"처럼 말하면 스킬이 자동으로 쓰입니다. 영어로는 "trial review", "jury vote"도 인식합니다.
